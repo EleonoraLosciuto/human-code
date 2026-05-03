@@ -1,0 +1,76 @@
+
+1. SPESA
+Assunto: al supermercato sono disponibili tutti i prodotti in lista_spesa
+
+FINCHÉ non completo la spesa, pagando e uscendo dal negozio.
+1. Aggiungo un prodotto in lista_spesa a carrello
+2. Carrello contiene tutti i prodotti in lista_spesa?
+	2.1 SE NO, torno a 1.
+	2.2. SE SÍ: vado a 3. 
+3. Procedo a pagare, utilizzando Coupon e contanti --> Contanti sono sufficienti? 
+	3.1 SE NO, vado a lasciare gli snack!! e torno a 3.
+	3.2 SE SÌ, imbusto ed esco dal negozio --> FINE
+		
+
+
+2. APRIRE UN PACCHETTO DI FIGURINE
+Assunto: album non é né vuoto né completo (c'é almeno una figurina su album e manca almeno una figurina a album)
+
+PER OGNI figurina in pacchetto
+	1. Prendo una figurina e verifico se figurina è già in album
+		1.1 SE figurina già presente in album, aggiungo figurina a mazzo_doppie
+		1.2 ALTRIMENTI aggiungo figurina a album
+
+
+
+3. SCEGLIERE COSA GUARDARE SU NETFLIX
+Assunto: almeno un film o serie tv, corrisponde ai requisiti.
+
+FINCHÉ non trovo un film O serie_tv su Netflix da guardare:
+	1. Seleziono un film o serie tv dal catalogo_di_Netflix che non sia in film_scartati (inizialmente vuoto)
+	2. Verifico SE (durata < o = tempo_a_disposizione) E (me l'hanno consigliato O se mi piace)
+		2.1. SE NO, aggiungo film / serie a film_scartati e torno a 1.
+		2.2 SE SÌ, lo guardo --> FINE			
+
+
+4. PREPARARE LE LASAGNE ALLA BOLOGNESE
+Assunto: ho acquistato e ho disponibili tutti gli ingredienti della ricetta della nonna. La ricetta della nonna indica quanti strati devono avere le mie lasagne.
+
+1. Definisco strati_target secondo ricetta della nonna
+
+2. FINCHÉ strati_lasagna (inizialmente 0) non é uguale a strati_target
+	2.1 aggiungo uno strato di pasta
+	2.2 aggiungo uno strato di ragù
+	2.3 aggiungo uno strato di besciamella e parmigiano
+	2.4 aggiungo +1 a strati_lasagna
+3. DOPO
+	3.1 aggiungo parmigiano in cima
+	3.2 inforno 45 min a 180 gradi ventilato
+4. Sapore é uguale alle lasagne di nonna?
+	SE NO --> PRINT (manca ingrediente segreto)
+	SE SÍ --> PRINT (ti sei superato)
+	
+
+
+5. COMPRARE QUALCOSA SU AMAZON
+
+FINCHÉ non ho comprato un regalo (regalo_acquistato= FALSE):
+	1. SE ("lampada_particolare" é disponibile su Amazon) E (tipo_consegna = prime) --> compra (regalo_acquistato = TRUE)
+	2. ALTRIMENTI SE ("stilografica" é disponibile su Amazon) E (prezzo <= budget) E (tipo_consegna = prime) --> compra (regalo_acquistato = TRUE)
+	3. ALTRIMENTI
+		3.1. Seleziona un libro nell'elenco libri_classici  --> compra (regalo_acquistato = TRUE)
+		
+			
+
+6. ORDINARE UNA PIZZA
+Assunto: pizzeria é aperta e ho definito un budget che mi permette di acquistare almeno una pizza che mi piace.
+
+1. FINCHÉ non ho ordinato una pizza (pizza_ordinata = FALSE)
+	1.1 SE (prosciutto_e_funghi è disponibile) E (prezzo <= budget) --> ordino pizza (pizza_ordinata = TRUE)
+	1.2 ALTRIMENTI seleziono un'altra pizza dal listino che non sia in pizze_scartate (inizialmente nessuna):
+		1.2.1. SE (pizza_selezionata mi piace) E (prezzo <= budget) --> ordino pizza (pizza_ordinata = TRUE)
+		1.2.2 ALTRIMENTI --> aggiungo la pizza a pizze_scartate.
+2. Ho mangiato tutta la pizza?
+	2.1 SE pizza_mangiata = 100% --> PRINT (la pizza ti é piaciuta e avevi proprio fame)
+	2.2 ALTRIMENTI SE pizza_mangiata <50% --> metti resto della pizza in frigo e PRINT (la pizza non ti é piaciuta, la mangerá il tuo coinquilino)
+	2.3 ALTRIMENTI --> metti resto della pizza in frigo e PRINT (la pizza mi é piaciuta, giú le mani!! il resto me mangio domani)
